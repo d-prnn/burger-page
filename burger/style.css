@@ -1,0 +1,370 @@
+* {
+    scroll-behavior: smooth;
+}
+
+html {
+    width: 1920px;
+    margin: 0;
+    /* max-width: 1920px; */
+    /* width: 100%; */
+    /* margin: 0 auto; */
+    box-sizing: border-box;
+}
+
+/* NAVIGATION */
+
+.header,
+.burger {
+    /* width: 100vw; */
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(255, 0, 0, 1) 50%);
+}
+
+.header {
+    padding-bottom: 50px;
+}
+
+.nav {
+    padding-left: 73px;
+    padding-top: 53px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__links {
+    width: minmax(auto, 600px);
+}
+
+.nav__link {
+    margin: 0 20px;
+    position: relative;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FF0000;
+}
+
+.nav__link_white {
+    margin-right: -150px;
+    margin-left: 310px;
+
+    font-size: 26px;
+    line-height: 31px;
+
+    color: #FFFFFF;
+}
+
+.nav__link:first-child {
+    color: #000000;
+}
+
+/* I used :first-child, but m.b. it isn't good for future JS */
+/* .nav__link_active {
+    color: #000000;
+} */
+
+.nav__cart {
+    padding-right: 110px;
+}
+
+.nav__cart:hover {
+    filter: invert(1);
+}
+
+/* STYLES FOR LINKS */
+
+.nav__link:hover,
+.nav__link_white:hover {
+    color: #000000;
+    transition: 0.5s;
+}
+
+/* LINK UNDERLINE */
+
+.nav__link::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 3px;
+    transition: 0.5s;
+    background-color: #FF0000;
+}
+
+.nav__link:hover::after {
+    width: 100%;
+}
+
+/* LINK CLICK */
+
+.nav__link:active,
+.nav__link_white:active {
+    color: #000000;
+    font-weight: 800;
+}
+
+/* SECTION BURGER */
+
+.burger {
+    height: 860px;
+
+    display: grid;
+    /* grid-template-columns: 530px 722px 286px 300px; */
+    grid-template-columns: 30% 38% 15% 16%;
+
+}
+
+.burger__left {
+    padding-left: 73px;
+}
+
+.burger__left,
+.burger__right {
+    width: fit-content;
+    height: fit-content;
+}
+
+.burger .title__opacity {
+    margin: 0;
+    align-self: flex-end;
+}
+
+.title__opacity {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 255px;
+    line-height: 309px;
+    color: #FFFFFF;
+
+    opacity: 0.15;
+    transform: rotate(-90deg);
+}
+
+.title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 87px;
+    line-height: 62px;
+}
+
+.title__burger {
+    margin-top: 235px;
+
+    width: max-content;
+}
+
+.subtitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 62px;
+}
+
+.subtitle__burger {
+    margin-top: 255px;
+
+    color: #FAFF00;
+}
+
+.burger__img {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.burger__sale {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    align-self: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 222px;
+    height: 222px;
+    border-radius: 50%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 65px;
+    line-height: 79px;
+
+    background-color: #FFFFFF;
+    color: #FF0000;
+    z-index: 2;
+    box-shadow: 9px 12px 15px rgba(0, 0, 0, 0.25);
+}
+
+.burger__img img {
+    grid-column: 1 / 4;
+    grid-row: 1 / 4;
+}
+
+.text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+}
+
+.button-primary {
+    width: 204px;
+    height: 60px;
+    border-radius: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+    border: 0;
+    background: #FF0000;
+    transition: 0.5s;
+}
+
+.button-primary:hover {
+    cursor: pointer;
+    color: #FF0000;
+    border: 3px solid #FF0000;
+    background-color: #FFFFFF;
+}
+
+.button-secondary {
+    width: 204px;
+    height: 60px;
+    border-radius: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+    color: #FF0000;
+    text-transform: uppercase;
+
+    border: 3px solid #FF0000;
+    background: #FFFFFF;
+    transition: 0.5s;
+}
+
+.button-secondary:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #FF0000;
+}
+
+.button-secondary:active {}
+
+/* MENU */
+
+.menu {
+    height: fit-content;
+    /* display: flex;
+    flex-direction: column;
+    text-align: center; */
+}
+
+.menu-title {
+    margin-top: 144px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title-decor {
+    font-family: 'Indie Flower';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 62px;
+    color: #FF0000;
+}
+
+.cards {
+    margin-left: 175px;
+
+    display: grid;
+    grid-template-columns: 25% 25% 25% 20%;
+    grid-template-rows: 45% 45%;
+    align-content: center;
+    row-gap: 155px;
+}
+
+.card-item {
+    width: 376px;
+    height: 620px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FFFFFF;
+    box-shadow: 13px 13px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+}
+
+.card-item:hover {
+    box-shadow: 13px 13px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-item img {
+    width: min-content;
+}
+
+.card-title {
+    margin: 0;
+    text-align: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 43px;
+    line-height: 62px;
+
+    color: #FF0000;
+}
+
+.card-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+
+    color: #989898;
+}
+
+.button-card {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+    align-items: center;
+}
+
+.menu .title__opacity {
+    margin: 0;
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+    align-self: center;
+
+    color: rgba(0, 0, 0, 0.25);
+}
