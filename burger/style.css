@@ -33,7 +33,7 @@ html {
 }
 
 .nav__links {
-    width: minmax(auto, 600px);
+    width: 600px;
 }
 
 .nav__link {
