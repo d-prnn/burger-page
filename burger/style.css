@@ -3,9 +3,9 @@
 }
 
 html {
-    width: 1920px;
+    /* width: 1920px; */
     margin: 0;
-    /* max-width: 1920px; */
+    max-width: 1920px;
     /* width: 100%; */
     /* margin: 0 auto; */
     box-sizing: border-box;
@@ -64,7 +64,7 @@ html {
     color: #000000;
 }
 
-/* I used :first-child, but m.b. it isn't good for future JS */
+/* Изменила цвет через :first-child, но может это не очень хорошо для JS */
 /* .nav__link_active {
     color: #000000;
 } */
@@ -113,12 +113,32 @@ html {
 /* SECTION BURGER */
 
 .burger {
-    height: 860px;
+    position: relative;
+    height: 820px;
 
     display: grid;
     /* grid-template-columns: 530px 722px 286px 300px; */
-    grid-template-columns: 30% 38% 15% 16%;
+    grid-template-columns: 30% 38% 18%;
+    grid-auto-flow: row;
 
+}
+
+.burger::after {
+    position: absolute;
+    right: -250px;
+    top: 300px;
+
+    content: "Burger";
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 255px;
+    line-height: 309px;
+    color: #FFFFFF;
+
+    opacity: 0.15;
+    transform: rotate(-90deg);
 }
 
 .burger__left {
@@ -127,14 +147,15 @@ html {
 
 .burger__left,
 .burger__right {
-    width: fit-content;
+    min-width: min-content;
     height: fit-content;
 }
 
-.burger .title__opacity {
+/* Попробовала сделать через ::after */
+/* .burger .title__opacity {
     margin: 0;
     align-self: flex-end;
-}
+} */
 
 .title__opacity {
     font-family: 'Inter';
@@ -170,7 +191,7 @@ html {
     line-height: 62px;
 }
 
-.subtitle__burger {
+.burger__subtitle {
     margin-top: 255px;
 
     color: #FAFF00;
@@ -282,6 +303,7 @@ html {
 
 .menu-title {
     margin-top: 144px;
+    margin-bottom: 144px;
 
     display: flex;
     flex-direction: column;
@@ -302,14 +324,16 @@ html {
 
     display: grid;
     grid-template-columns: 25% 25% 25% 20%;
-    grid-template-rows: 45% 45%;
+    grid-template-rows: 50% 50%;
     align-content: center;
     row-gap: 155px;
 }
 
 .card-item {
-    width: 376px;
-    height: 620px;
+    width: 90%;
+    height: 100%;
+
+    overflow: hidden;
 
     display: flex;
     flex-direction: column;
@@ -325,8 +349,9 @@ html {
     box-shadow: 13px 13px 30px rgba(0, 0, 0, 0.25);
 }
 
-.card-item img {
-    width: min-content;
+.card-item>img {
+    width: 90%;
+    object-fit: contain;
 }
 
 .card-title {
@@ -354,6 +379,8 @@ html {
 }
 
 .button-card {
+    width: 90%;
+
     display: flex;
     justify-content: center;
     column-gap: 25px;

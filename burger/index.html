@@ -15,6 +15,7 @@
 <body>
     <header class="header">
         <nav class="nav">
+            <!-- Элемент h1 один на странице, но заголовки (Single Patty, Dine In + Delivery) на странице стречаются несколько раз в одинаковом! стиле, добавила в h1 "как бы название бургерной", не знаю пока, что лучше было поместить в h1 -->
             <h1 style="display: none;">Burger</h1>
                 <img src="assets/images/logo.png" alt="logo">
             <span class="nav__links">
@@ -42,12 +43,14 @@
                 <img src="assets/images/burger-1.png" alt="burger">
             </div>
             <div class="burger__right">
-                <h3 class="subtitle subtitle__burger">Sassy Burger</h3>
-                <p class="text">Our great burgers,
+                <h3 class="subtitle burger__subtitle">Sassy Burger</h3>
+                <p class="text">Our great burgers,<br>
                     Now with extra cheese </p>
             </div>
-            <span class="title__opacity">Burger</span>
+            <!-- Попробовала сделать через ::after декоративный элемент -->
+            <!-- <span class="title__opacity">Burger</span> -->
         </section>
+        <!-- Здесь не по БЭМ, попробовала именовать классы произвольно, чтобы отражали смысл -->
         <section class="menu" id="menu">
             <div class="menu-title">
                 <span class="title-decor">Our special</span>
