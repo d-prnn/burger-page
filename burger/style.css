@@ -226,6 +226,30 @@ html {
     color: #FF0000;
     z-index: 2;
     box-shadow: 9px 12px 15px rgba(0, 0, 0, 0.25);
+
+    animation-name: burger-sale;
+}
+
+@keyframes burger-sale {
+    0% {
+        margin-top: 0;
+    }
+    25%, 75% {
+        margin-top: -50px;
+    }
+    50% {
+        margin-top: -100px;
+    }
+    100% {
+        margin-top: 0;
+    }
+}
+
+.burger__sale {
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 5;
+    animation-direction: normal;
 }
 
 .burger__img img {
