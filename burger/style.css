@@ -339,12 +339,13 @@ html {
     grid-template-columns: 25% 25% 25% 20%;
     grid-template-rows: 50% 50%;
     align-content: center;
-    row-gap: 155px;
+    row-gap: 130px;
+    column-gap: 52px;
 }
 
 .card-item {
     width: 90%;
-    height: 100%;
+    height: 95%;
 
     overflow: hidden;
 
@@ -363,7 +364,7 @@ html {
 }
 
 .card-item>img {
-    width: 90%;
+    width: 70%;
     object-fit: contain;
 }
 
@@ -407,4 +408,61 @@ html {
     align-self: center;
 
     color: rgba(0, 0, 0, 0.25);
+}
+
+/* MENU-SCROLL */
+
+.scroll {
+    margin-top: 200px;
+    display: flex;
+}
+
+.scroll_card {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-basis: 640px;
+}
+
+.scroll_card::before {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    left: 0;
+    top: -30px;
+    height: 100px;
+    transform: skewY(3deg);
+    background-color: #FFFFFF;
+}
+
+.scroll_card:nth-child(1) {
+    background-color: #FA5454;
+}
+
+.scroll_card:nth-child(2) {
+    background-color: #FAFF00;
+}
+
+.scroll_card:nth-child(3) {
+    background-color: #F69752;
+}
+
+.scroll-text {
+    align-self: center;
+
+    margin-top: 300px;
+    margin-left: 30px;
+}
+
+.scroll-title {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: 13px 13px 30px rgba(0, 0, 0, 0.25);
+}
+
+.button-scroll {
+    border: none;
 }
