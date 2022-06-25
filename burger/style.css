@@ -13,6 +13,10 @@ html {
 
 /* NAVIGATION */
 
+.logo {
+    display: none;
+}
+
 .header,
 .burger {
     /* width: 100vw; */
